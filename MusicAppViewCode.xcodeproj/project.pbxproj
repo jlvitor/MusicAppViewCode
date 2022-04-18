@@ -12,6 +12,10 @@
 		CC11B021280D40B30087C0D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B020280D40B30087C0D7 /* HomeViewController.swift */; };
 		CC11B026280D40B50087C0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC11B025280D40B50087C0D7 /* Assets.xcassets */; };
 		CC11B029280D40B50087C0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC11B027280D40B50087C0D7 /* LaunchScreen.storyboard */; };
+		CC11B036280D4AAA0087C0D7 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B031280D4AAA0087C0D7 /* NSAttributedString + Extension.swift */; };
+		CC11B037280D4AAA0087C0D7 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B032280D4AAA0087C0D7 /* UIView + Extension.swift */; };
+		CC11B038280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B033280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift */; };
+		CC11B039280D4AAA0087C0D7 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		CC11B025280D40B50087C0D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC11B028280D40B50087C0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC11B02A280D40B50087C0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC11B031280D4AAA0087C0D7 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
+		CC11B032280D4AAA0087C0D7 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		CC11B033280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
+		CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,8 @@
 		CC11B01B280D40B30087C0D7 /* MusicAppViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				CC11B030280D4AAA0087C0D7 /* Extension */,
+				CC11B034280D4AAA0087C0D7 /* Model */,
 				CC11B01C280D40B30087C0D7 /* AppDelegate.swift */,
 				CC11B01E280D40B30087C0D7 /* SceneDelegate.swift */,
 				CC11B020280D40B30087C0D7 /* HomeViewController.swift */,
@@ -62,6 +72,24 @@
 				CC11B02A280D40B50087C0D7 /* Info.plist */,
 			);
 			path = MusicAppViewCode;
+			sourceTree = "<group>";
+		};
+		CC11B030280D4AAA0087C0D7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CC11B031280D4AAA0087C0D7 /* NSAttributedString + Extension.swift */,
+				CC11B032280D4AAA0087C0D7 /* UIView + Extension.swift */,
+				CC11B033280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CC11B034280D4AAA0087C0D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +164,11 @@
 			files = (
 				CC11B021280D40B30087C0D7 /* HomeViewController.swift in Sources */,
 				CC11B01D280D40B30087C0D7 /* AppDelegate.swift in Sources */,
+				CC11B038280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift in Sources */,
 				CC11B01F280D40B30087C0D7 /* SceneDelegate.swift in Sources */,
+				CC11B037280D4AAA0087C0D7 /* UIView + Extension.swift in Sources */,
+				CC11B036280D4AAA0087C0D7 /* NSAttributedString + Extension.swift in Sources */,
+				CC11B039280D4AAA0087C0D7 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
