@@ -16,7 +16,7 @@ struct CardViewModel {
     var duration: String?
     var cardDescription:String?
     var cardImage: String?
-    var cardList:[CardListModel]?
+    var cardList: [CardListModel]?
 }
 
 struct CardListModel {
@@ -25,9 +25,7 @@ struct CardListModel {
     var listSubtitle: String?
 }
 
-
 var CardData = [
-    
     CardViewModel(
         categoryImage: "cat1",
         categoryName: "RELAX ALL THE TIME",

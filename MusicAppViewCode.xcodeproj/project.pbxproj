@@ -16,6 +16,9 @@
 		CC11B037280D4AAA0087C0D7 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B032280D4AAA0087C0D7 /* UIView + Extension.swift */; };
 		CC11B038280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B033280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift */; };
 		CC11B039280D4AAA0087C0D7 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */; };
+		CC8811F1280E703300D93C8D /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8811F0280E703300D93C8D /* CustomCardView.swift */; };
+		CCAEC6B2280E09E800BBBF6D /* HomeViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAEC6B1280E09E800BBBF6D /* HomeViewControllerScreen.swift */; };
+		CCAEC6B9280E148900BBBF6D /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAEC6B8280E148900BBBF6D /* CardViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		CC11B032280D4AAA0087C0D7 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		CC11B033280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
 		CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		CC8811F0280E703300D93C8D /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
+		CCAEC6B1280E09E800BBBF6D /* HomeViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerScreen.swift; sourceTree = "<group>"; };
+		CCAEC6B8280E148900BBBF6D /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,11 @@
 			children = (
 				CC11B030280D4AAA0087C0D7 /* Extension */,
 				CC11B034280D4AAA0087C0D7 /* Model */,
+				CC8811EF280E701D00D93C8D /* CustomView */,
+				CCAEC6B6280E0A4600BBBF6D /* Home */,
+				CCAEC6B7280E147300BBBF6D /* Cell */,
 				CC11B01C280D40B30087C0D7 /* AppDelegate.swift */,
 				CC11B01E280D40B30087C0D7 /* SceneDelegate.swift */,
-				CC11B020280D40B30087C0D7 /* HomeViewController.swift */,
 				CC11B025280D40B50087C0D7 /* Assets.xcassets */,
 				CC11B027280D40B50087C0D7 /* LaunchScreen.storyboard */,
 				CC11B02A280D40B50087C0D7 /* Info.plist */,
@@ -90,6 +98,39 @@
 				CC11B035280D4AAA0087C0D7 /* CardViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CC8811EF280E701D00D93C8D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CC8811F0280E703300D93C8D /* CustomCardView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CC8811F2280E751D00D93C8D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				CCAEC6B1280E09E800BBBF6D /* HomeViewControllerScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		CCAEC6B6280E0A4600BBBF6D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CC8811F2280E751D00D93C8D /* Screen */,
+				CC11B020280D40B30087C0D7 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CCAEC6B7280E147300BBBF6D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CCAEC6B8280E148900BBBF6D /* CardViewTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAEC6B9280E148900BBBF6D /* CardViewTableViewCell.swift in Sources */,
 				CC11B021280D40B30087C0D7 /* HomeViewController.swift in Sources */,
+				CCAEC6B2280E09E800BBBF6D /* HomeViewControllerScreen.swift in Sources */,
 				CC11B01D280D40B30087C0D7 /* AppDelegate.swift in Sources */,
 				CC11B038280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift in Sources */,
 				CC11B01F280D40B30087C0D7 /* SceneDelegate.swift in Sources */,
 				CC11B037280D4AAA0087C0D7 /* UIView + Extension.swift in Sources */,
+				CC8811F1280E703300D93C8D /* CustomCardView.swift in Sources */,
 				CC11B036280D4AAA0087C0D7 /* NSAttributedString + Extension.swift in Sources */,
 				CC11B039280D4AAA0087C0D7 /* CardViewModel.swift in Sources */,
 			);
