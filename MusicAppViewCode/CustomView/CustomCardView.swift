@@ -22,7 +22,6 @@ class CustomCardView: UIView {
     var containerBottomConstraints: NSLayoutConstraint?
     var dataModel: CardViewModel?
     
-    
     //MARK: Elementos    
     //View do card
     lazy var cardContainerView: UIView = {
@@ -36,7 +35,6 @@ class CustomCardView: UIView {
         return view
     }()
     
-    
     //Imagem sobre o card
     lazy var cardImage: UIImageView = {
         let img = UIImageView()
@@ -46,7 +44,6 @@ class CustomCardView: UIView {
         return img
     }()
     
-    
     //View que escurece imagem do card
     lazy var overlayView: UIView = {
         let view = UIView()
@@ -54,7 +51,6 @@ class CustomCardView: UIView {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         return view
     }()
-    
     
     //Bordas imagem de perfil
     lazy var profileBorderView: UIView = {
@@ -67,7 +63,6 @@ class CustomCardView: UIView {
         return view
     }()
     
-    
     //Imagem de perfil
     lazy var cardProfilePicture: UIImageView = {
         let img = UIImageView()
@@ -78,7 +73,6 @@ class CustomCardView: UIView {
         img.layer.cornerRadius = 20
         return img
     }()
-    
     
     //Botao add imagem perfil
     lazy var addProfileImageButton: UIButton = {
@@ -91,7 +85,6 @@ class CustomCardView: UIView {
         return btn
     }()
     
-    
     //Categoria da musica
     lazy var cardCategoryTitleLabel: UILabel = {
         let label = UILabel()
@@ -100,7 +93,6 @@ class CustomCardView: UIView {
         label.textColor = .white
         return label
     }()
-    
     
     //Data categoria
     lazy var cardCategoryDateLabel: UILabel = {
@@ -111,7 +103,6 @@ class CustomCardView: UIView {
         return label
     }()
     
-    
     //Titulo
     lazy var cardTitle: UILabel = {
         let label = UILabel()
@@ -121,15 +112,13 @@ class CustomCardView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
-    
+
     //Gostei e tempo
     lazy var likeAndTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     
     //Descricao do titulo
     lazy var descriptionTitleLabel: UILabel = {
@@ -142,21 +131,22 @@ class CustomCardView: UIView {
         return label
     }()
     
+    lazy var actionsView: CardActionView = {
+        let view = CardActionView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
-    init(viewMode: ViewMode, cardData: CardViewModel) {
+    init() {
         let frame = CGRect.zero
-        self.viewMode = viewMode
-        self.dataModel = cardData
         super.init(frame: frame)
         self.addElements()
         self.setUpConstraints()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     private func addElements() {
         self.addSubview(self.cardContainerView)
@@ -172,9 +162,10 @@ class CustomCardView: UIView {
         self.cardContainerView.addSubview(self.cardTitle)
         self.cardContainerView.addSubview(self.likeAndTimeLabel)
         self.cardContainerView.addSubview(self.descriptionTitleLabel)
+        
+        self.cardContainerView.addSubview(self.actionsView)
         self.updateLayout(for: viewMode ?? .card)
     }
-    
     
     private func updateLayout(for mode: ViewMode) {
         if mode == .full {
@@ -190,8 +181,8 @@ class CustomCardView: UIView {
             self.containerBottomConstraints?.constant = -15
             self.descriptionTitleLabel.isHidden = true
         }
+        self.actionsView.updateLayout(for: mode)
     }
-    
     
     public func setUpView(data: CardViewModel) {
         self.cardCategoryTitleLabel.text = data.categoryName
@@ -202,7 +193,6 @@ class CustomCardView: UIView {
         self.cardImage.image = UIImage(named: data.cardImage ?? "")
         self.cardProfilePicture.image = UIImage(named: data.categoryImage ?? "")
     }
-    
     
     private func setUpConstraints() {
         self.containerTopConstraints = cardContainerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 15)
@@ -252,6 +242,11 @@ class CustomCardView: UIView {
             self.descriptionTitleLabel.topAnchor.constraint(equalTo: self.likeAndTimeLabel.bottomAnchor, constant: 30),
             self.descriptionTitleLabel.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor, constant: 40),
             self.descriptionTitleLabel.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -40),
+            
+            self.actionsView.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor, constant: 20),
+            self.actionsView.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -20),
+            self.actionsView.bottomAnchor.constraint(equalTo: self.cardContainerView.bottomAnchor, constant: -20),
+            self.actionsView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     

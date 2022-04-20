@@ -19,6 +19,7 @@
 		CC8811F1280E703300D93C8D /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8811F0280E703300D93C8D /* CustomCardView.swift */; };
 		CCAEC6B2280E09E800BBBF6D /* HomeViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAEC6B1280E09E800BBBF6D /* HomeViewControllerScreen.swift */; };
 		CCAEC6B9280E148900BBBF6D /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAEC6B8280E148900BBBF6D /* CardViewTableViewCell.swift */; };
+		CCF2C554280F473C002E4C68 /* CardActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF2C553280F473C002E4C68 /* CardActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CC8811F0280E703300D93C8D /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		CCAEC6B1280E09E800BBBF6D /* HomeViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerScreen.swift; sourceTree = "<group>"; };
 		CCAEC6B8280E148900BBBF6D /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
+		CCF2C553280F473C002E4C68 /* CardActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8811F0280E703300D93C8D /* CustomCardView.swift */,
+				CCF2C553280F473C002E4C68 /* CardActionView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				CC11B01D280D40B30087C0D7 /* AppDelegate.swift in Sources */,
 				CC11B038280D4AAA0087C0D7 /* NSTextAttachment + Extension.swift in Sources */,
 				CC11B01F280D40B30087C0D7 /* SceneDelegate.swift in Sources */,
+				CCF2C554280F473C002E4C68 /* CardActionView.swift in Sources */,
 				CC11B037280D4AAA0087C0D7 /* UIView + Extension.swift in Sources */,
 				CC8811F1280E703300D93C8D /* CustomCardView.swift in Sources */,
 				CC11B036280D4AAA0087C0D7 /* NSAttributedString + Extension.swift in Sources */,
