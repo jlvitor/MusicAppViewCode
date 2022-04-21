@@ -30,7 +30,7 @@ class DetailViewControllerScreen: UIView {
     }()
     
     lazy var cardView: CustomCardView = {
-        let view = CustomCardView()
+        let view = CustomCardView(mode: .full)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.actionsView.updateLayout(for: .full)
         view.cardContainerView.layer.cornerRadius = 0.0
@@ -46,6 +46,7 @@ class DetailViewControllerScreen: UIView {
         table.showsVerticalScrollIndicator = false
         table.isScrollEnabled = false
         table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        table.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
         return table
     }()
     
