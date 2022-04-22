@@ -15,6 +15,7 @@ class DetailViewControllerScreen: UIView {
     
     var cardModel: CardViewModel?
     var navBarTopAnchor: NSLayoutConstraint?
+    var playerViewBottomAnchor: NSLayoutConstraint?
     
     private weak var delegate: DetailViewControllerScreenDelegate?
     
@@ -36,6 +37,14 @@ class DetailViewControllerScreen: UIView {
         view.cardContainerView.layer.cornerRadius = 0.0
         view.setUpView(data: self.cardModel ?? CardViewModel())
         return view
+    }()
+    
+    lazy var navBar: CustomNavBar = {
+        let nav = CustomNavBar()
+        nav.translatesAutoresizingMaskIntoConstraints = false
+        nav.backgroundColor = .black
+        nav.setUpView(data: self.cardModel ?? CardViewModel())
+        return nav
     }()
     
     lazy var tableView: UITableView = {
@@ -61,6 +70,12 @@ class DetailViewControllerScreen: UIView {
         return button
     }()
     
+    lazy var playerView: CustomPlayerView = {
+        let pv = CustomPlayerView()
+        pv.translatesAutoresizingMaskIntoConstraints = false
+        return pv
+    }()
+    
     init(dataView: CardViewModel?) {
         super.init(frame: CGRect())
         self.cardModel = dataView
@@ -82,7 +97,9 @@ class DetailViewControllerScreen: UIView {
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(self.cardView)
         self.scrollView.addSubview(self.tableView)
-        self.scrollView.addSubview(self.closeButton)
+        self.addSubview(self.navBar)
+        self.addSubview(self.closeButton)
+        self.addSubview(self.playerView)
     }
     
     private func setupConstraints() {
@@ -92,7 +109,6 @@ class DetailViewControllerScreen: UIView {
             .first?.windows.filter({$0.isKeyWindow}).first
         
         let topPadding = window?.safeAreaInsets.top
-        print(topPadding as Any)
         
         self.scrollView.pin(to: self)
         
@@ -112,7 +128,21 @@ class DetailViewControllerScreen: UIView {
             self.closeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.closeButton.widthAnchor.constraint(equalToConstant: 30),
             self.closeButton.heightAnchor.constraint(equalToConstant: 30),
+            
+            self.navBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.navBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.navBar.heightAnchor.constraint(equalToConstant: ((topPadding ?? 0.0) + 80)),
+            
+            self.playerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.playerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.playerView.heightAnchor.constraint(equalToConstant: 120)
         ])
+        
+        self.navBarTopAnchor = self.navBar.topAnchor.constraint(equalTo: self.topAnchor, constant: -((topPadding ?? 0.0) + 60))
+        self.navBarTopAnchor?.isActive = true
+        
+        self.playerViewBottomAnchor = self.playerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 120)
+        self.playerViewBottomAnchor?.isActive = true
     }
     
     public func configAllDelegates(
